@@ -9,6 +9,7 @@
 - Should fingers/penis be items (so they can be inserted?)
 - Should mouth/vagina/ass be containers (so they can be filled?)
 - describe what flora is wearing so you can strip her
+- See §7.15. Kinds of action for how to block interacting with awake people
 ]
 
 [======================================]
@@ -140,7 +141,7 @@ Understand the command "raise" or "lift" as "pull".
 Understand the command "lower" as "push".
 Understand the command "place" or "stick" or "shove" or "stuff" as "put".
 Understand the command "poke" as "touch".
-Understand the command "stroke" or "caress" or "tease" as "rub".
+Understand the command "stroke" as "rub".
 Understand the command "pinch" as "squeeze".
 Understand the command "slap" or "spank" or "smack" as "attack".
 Understand the command "spread" as "open".
@@ -164,6 +165,7 @@ Understand "you're dreaming" or "go back to sleep" as sleeping.
 
 [hold normally means "take"]
 Understand "hold [body part]" as squeezing.
+Understand "hold [someone]" as hugging.
 
 [put cock between tits]
 Understand "put [something] between [something]" as inserting it into.
@@ -177,25 +179,102 @@ Understand "tell [someone] [text]" as telling it about.
 [talk dirty to someone]
 Understand "talk [text] to [someone]" as telling it about (with nouns reversed).
 
+[Override existing commands]
+Understand the command "hug" as something new.
+Understand the command "screw" as something new.
+
 Part 2 - New and Updated Actions
 
+Hugging is an action applying to one thing.
+Understand "hug [something]" as hugging.
+Understand the command "cuddle" as "hug".
+Check an actor hugging:
+	try the actor kissing the noun instead;
+
+Biting is an action applying to one thing.
+Understand "bite [something]" as biting.
+Check an actor biting:
+	try the actor eating the noun instead;
+
+Teasing is an action applying to one thing.
+Understand "tease [something]" as teasing.
+Understand the command "caress" as "tease".
+Check an actor teasing:
+	try the actor touching the noun instead;
+
+Licking is an action applying to one thing.
+Understand "lick [something]" as licking.
+Check an actor licking:
+	try the actor tasting the noun instead;
+
+Sucking is an action applying to one thing.
+Understand "suck [something]" as sucking.
+Understand the command "blow" as "suck".
+Check an actor sucking:
+	try the actor eating the noun instead;
+
+Fucking is an action applying to one thing.
+Understand "fuck [something]" as fucking.
+Understand the command "screw" and "bang" as "fuck".
+Check an actor fucking:
+	try the actor rubbing the noun instead;
+
+Spitting on is an action applying to one thing.
+Understand "spit on [something]" as spitting on.
+Check an actor spitting on:
+	say "That would be very rude!" instead.
+
+Cumming on is an action applying to one thing.
+Understand "cum on [something]" as cumming on.
+Check an actor cumming on:
+	say "Cumming on [the noun] would be very rude!" instead.
+
+Cumming in is an action applying to one thing.
+Understand "cum in [something]" as cumming in.
+Check an actor cumming in:
+	say "Cumming in [the noun] would be very rude!" instead.
+
+Cumming is an action applying to nothing.
+Understand "cum" and "cum for me" as cumming.
+Understand the command "come" and "orgasm" and "squirt" as "cum".
+Check an actor cumming:
+	say "Cumming!" instead.
+
+Masturbating is an action applying to nothing.
+Understand "masturbate" and "jerk off" and "rub one out" as masturbating.
+Check an actor masturbating:
+	if the actor incorporates a penis (called his cock):
+		try the actor trying rubbing his cock instead;
+	else if the actor incorporates a clit (called her clit):
+		try the actor trying rubbing her clit instead;
+
+Fingerbanging is an action applying to one thing.
+Understand "fingerbang [body part]" as rubbing.
+Understand "fingerbang [someone]" as fingerbanging.
+Understand the command "finger" and "fingerfuck" as "fingerbang".
+Check an actor fingerbanging someone:
+	if the noun is male and the noun incorporates an ass (called his anus):
+		try the actor rubbing his anus instead;
+	else if the noun incorporates a vagina (called her pussy):
+		try the actor rubbing her pussy instead;
+
+Reassuring is an action applying to one thing.
+Understand "reassure [someone]" as reassuring.
+Check an actor reassuring:
+	if the alertness of the noun is at least 5:
+		decrease the alertness of the noun by 5;
+	else:
+		now the alertness of the noun is 0;
+	say "You try to sooth [the noun].";
+
+Encouraging is an action applying to one thing.
+Understand "encourage [someone]" as encouraging.
+Check an actor encouraging:
+	increase the arousal of the noun by 5;
+	say "You try to arouse [the noun].";
+
 [NEW]
-[bite something]
-[spit on something]
-[lick something]
-[suck something/blow me]
-[fingerbang something]
-[fuck something/someone]
-[cum]
-[cum in/on something]
-[cum for someone]
-[jerk off/masturbate (rub your penis)]
-[strip/undress someone]
 [swallow my cum]
-[reassure someone]
-[encourage someone]
-[hug/hold/cuddle (distinct from kiss)]
-[add gentle touch for caress/tease/stroke]
 
 [
 - Most of these should handle "Verb [someone]" and "Verb [body part]"
@@ -232,17 +311,6 @@ Part 2 - New and Updated Actions
 	- [x] suck, blow me
 	- [x] rub
 	- [x] fuck
-]
-
-[ Example of creating new action
-Painting is an action applying to nothing. Understand "paint" as painting.
-Report painting: say "painting!"
-
-Painting it is an action applying to one thing and requiring light. Understand "paint [something]", "put paint on [something]", and "apply paint to [something]" as painting it.
-Report painting it: say "painting [the noun]!"
-
-Painting it with is an action applying to two things and requiring light. Understand "paint [something] with [something]" as painting it with.
-Report painting it with: say "painting [the noun] with [the second noun]!"
 ]
 
 Part 3 - Debugging Actions
@@ -334,11 +402,11 @@ Part 1 - Status Checks
 
 [should these be rules?]
 
-Before touching or rubbing a body part that is part of someone (called owner):
+Before touching or rubbing a body part that is part of someone (called owner) that is not the player:
 	if the owner is alert and the owner is not aroused, say "Touching [the noun] while they are awake would be too awkward!" instead;
 	say "Touching [the noun]!";
 
-Before taking a garment that is worn by someone (called owner):
+Before taking a garment that is worn by someone (called owner) that is not the player:
 	if the owner is alert and the owner is not aroused, say "Trying to remove [the noun] while [printed name of owner] is awake would be too awkward!" instead;
 	say "Removing [the noun]!";
 
