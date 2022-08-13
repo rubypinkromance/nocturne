@@ -1,8 +1,6 @@
 "Nocturne" by Ruby Pink
 
 [
-- can we make a rule like "before interacting with person or body part"?
-- add new actions and synonyms for actions
 - clothing modifies interactions (less arousal through clothing? no insertion?)
 - once flora's horny level exceeds X, she mumbles your name in her sleep
 - add achievements
@@ -60,15 +58,17 @@ A garment is a kind of thing. A garment is always wearable.
 
 Part 1 - Coverage Categories
 
-A top and a bottom and coverall are a kind of garment.
+An undergarment and a top and a bottom and a coverall are a kind of garment.
 
 Part 2 - Garment Types (inherits coverage)
 
 A dress and a robe and a jumpsuit are kinds of coveralls.
 
-A bra and a shirt are kinds of tops.
+A shirt and a jacket are kinds of tops.
 
-Underwear and pants and a skirt are kinds of bottoms. The plural of pants is pants. The plural of underwear is underwear.
+A skirt and pants are kinds of bottoms. The plural of pants is pants.
+
+A bra and underwear are kinds of undergarments. The plural of underwear is underwear.
 
 [--------------------------------------]
 
@@ -98,41 +98,42 @@ Definition: a person is alert if their alertness is at least 50.
 
 Book 4 - Actions
 
-[STANDARD RULES]
-[close something]
-[drink something]
-[eat something]
-[inserting something in something]
-[kiss something]
-[open something]
-[rub something]
-[show someone something]
-[smell something]
-[squeeze something]
-[take off something]
-[taste something]
-[touch something]
-[wake someone]
-
-[STANDARD SYNONYMS]
-[embrace something (kissing)]
-[feel something (touching)]
-[hug something (kissing)]
-[put something in something (inserting)]
-[sniff something (smelling)]
-[stroke something (rubbing)]
-[swallow something (drinking)]
-[twist something (turning)]
-[uncover something (opening)]
-
-[EXTENDED]
-[lift something (pulling)]
-[lower something (pushing)]
-[place something in something (inserting)]
-[raise something (pulling)]
-[shove something in something (inserting)]
-[stick something in something (inserting)]
-[stuff something in something (inserting)]
+[
+- Most of these should handle "Verb [someone]" and "Verb [body part]"
+- Some should handle "with [toy/penis/fingers]"
+	- [x] touch, poke
+	- [x] rub, stroke, caress (are those the same?)
+	- [x] squeeze
+	- [x] pinch, pull (not always the same)
+	- [x] twist nipple
+	- [x] tease (gently touch)
+	- [x] slap
+	- [x] bite, harder
+	- [x] spit on
+	- [x] lick
+	- [x] suck, harder
+	- [x] open, spread legs/vagina/ass/mouth
+	- [x] finger, deeper
+	- [x] insert (put penis in mouth), deeper
+	- [x] put penis between tits/ass
+	- [x] fuck, harder
+	- [x] cum in/on face/mouth/tits/vagina/etc
+	- [x] talk dirty (increasing levels, allow her to react increasingly)
+	- [x] reassure, relax
+	- [x] encourage
+	- [x] cum for me
+	- [x] tell her she's dreaming
+	- [x] masturbate, jerk off
+	- [x] stroke penis
+	- [x] look under garment
+	- [x] lift, move, shift garment
+	- [x] remove, strip, undress
+- Requests "Flora, verb noun"
+	- [x] swallow
+	- [x] suck, blow me
+	- [x] rub
+	- [x] fuck
+]
 
 Part 1 - Extended Grammar
 
@@ -183,6 +184,16 @@ Understand "talk [text] to [someone]" as telling it about (with nouns reversed).
 Understand the command "hug" as something new.
 Understand the command "screw" as something new.
 
+[Define some existing commands to be checked as sexual]
+Kissing is performing sexual behaviour.
+Touching is performing sexual behaviour.
+Rubbing is performing sexual behaviour.
+Squeezing is performing sexual behaviour.
+Turning a body part is performing sexual behavior.
+Smelling a body part is performing sexual behavior.
+Tasting a body part is performing sexual behavior.
+Drinking a body part is performing sexual behavior.
+
 Part 2 - New and Updated Actions
 
 Hugging is an action applying to one thing.
@@ -192,55 +203,70 @@ Check an actor hugging:
 	try the actor kissing the noun instead;
 
 Biting is an action applying to one thing.
+Biting a body part is performing sexual behaviour.
+Biting someone is performing sexual behaviour.
 Understand "bite [something]" as biting.
 Check an actor biting:
 	try the actor eating the noun instead;
 
 Teasing is an action applying to one thing.
+Teasing a body part is performing sexual behaviour.
+Teasing someone is performing sexual behaviour.
 Understand "tease [something]" as teasing.
 Understand the command "caress" as "tease".
 Check an actor teasing:
 	try the actor touching the noun instead;
 
 Licking is an action applying to one thing.
+Licking a body part is performing sexual behaviour.
+Licking someone is performing sexual behaviour.
 Understand "lick [something]" as licking.
 Check an actor licking:
 	try the actor tasting the noun instead;
 
 Sucking is an action applying to one thing.
+Sucking a body part is performing sexual behaviour.
+Sucking someone is performing sexual behaviour.
 Understand "suck [something]" as sucking.
 Understand the command "blow" as "suck".
 Check an actor sucking:
 	try the actor eating the noun instead;
 
 Fucking is an action applying to one thing.
+Fucking is performing sexual behaviour.
 Understand "fuck [something]" as fucking.
 Understand the command "screw" and "bang" as "fuck".
 Check an actor fucking:
 	try the actor rubbing the noun instead;
 
 Spitting on is an action applying to one thing.
+Spitting on a body part is performing sexual behaviour.
+Spitting on someone is performing sexual behaviour.
 Understand "spit on [something]" as spitting on.
 Check an actor spitting on:
 	say "That would be very rude!" instead.
 
 Cumming on is an action applying to one thing.
+Cumming on is performing sexual behaviour.
 Understand "cum on [something]" as cumming on.
 Check an actor cumming on:
 	say "Cumming on [the noun] would be very rude!" instead.
 
 Cumming in is an action applying to one thing.
+Cumming in is performing sexual behaviour.
 Understand "cum in [something]" as cumming in.
 Check an actor cumming in:
 	say "Cumming in [the noun] would be very rude!" instead.
 
 Cumming is an action applying to nothing.
+Cumming is performing sexual behaviour.
 Understand "cum" and "cum for me" as cumming.
 Understand the command "come" and "orgasm" and "squirt" as "cum".
 Check an actor cumming:
 	say "Cumming!" instead.
 
 Masturbating is an action applying to nothing.
+Masturbating is performing sexual behaviour.
 Understand "masturbate" and "jerk off" and "rub one out" as masturbating.
 Check an actor masturbating:
 	if the actor incorporates a penis (called his cock):
@@ -249,6 +275,7 @@ Check an actor masturbating:
 		try the actor trying rubbing her clit instead;
 
 Fingerbanging is an action applying to one thing.
+Fingerbanging is performing sexual behaviour.
 Understand "fingerbang [body part]" as rubbing.
 Understand "fingerbang [someone]" as fingerbanging.
 Understand the command "finger" and "fingerfuck" as "fingerbang".
@@ -272,46 +299,6 @@ Understand "encourage [someone]" as encouraging.
 Check an actor encouraging:
 	increase the arousal of the noun by 5;
 	say "You try to arouse [the noun].";
-
-[NEW]
-[swallow my cum]
-
-[
-- Most of these should handle "Verb [someone]" and "Verb [body part]"
-- Some should handle "with [toy/penis/fingers]"
-	- [x] touch, poke
-	- [x] rub, stroke, caress (are those the same?)
-	- [x] squeeze
-	- [x] pinch, pull (not always the same)
-	- [x] twist nipple
-	- [x] tease (gently touch)
-	- [x] slap
-	- [x] bite, harder
-	- [x] spit on
-	- [x] lick
-	- [x] suck, harder
-	- [x] open, spread legs/vagina/ass/mouth
-	- [x] finger, deeper
-	- [x] insert (put penis in mouth), deeper
-	- [x] put penis between tits/ass
-	- [x] fuck, harder
-	- [x] cum in/on face/mouth/tits/vagina/etc
-	- [x] talk dirty (increasing levels, allow her to react increasingly)
-	- [x] reassure, relax
-	- [x] encourage
-	- [x] cum for me
-	- [x] tell her she's dreaming
-	- [x] masturbate, jerk off
-	- [x] stroke penis
-	- [x] look under garment
-	- [x] lift, move, shift garment
-	- [x] remove, strip, undress
-- Requests "Flora, verb noun"
-	- [x] swallow
-	- [x] suck, blow me
-	- [x] rub
-	- [x] fuck
-]
 
 Part 3 - Debugging Actions
 
@@ -378,37 +365,40 @@ Instead of taking anything that is scenery, say "You don't need that right now."
 [better messages when moving scenery]
 Instead of pushing or pulling anything that is scenery, say "You don't need to move that right now."
 
-[
-Part 1 - from Helpful Functions by Daniel Stelzer
-To decide whether (item - a thing) must be touched:
-	if the item is the noun and the action requires a touchable noun, yes;
-	if the item is the second noun and the action requires a touchable second noun, yes;
-	no.
-
-To decide whether (table - a supporter) must be touched indirectly:
-	repeat with the item running through things on the table:
-		if the item must be touched, yes;
-	if the table must be touched, yes;
-	no.
-
-To decide whether (box - a container) must be touched indirectly:
-	repeat with the item running through things in the box:
-		if the item must be touched, yes;
-	if the box must be touched, yes;
-	no.
-]
-
 Part 1 - Status Checks
 
-[should these be rules?]
+[Note: These use Instead so they can be overidden by more specific Before rules for individual NPCs. They can't use Check because they apply to multiple actions.]
 
-Before touching or rubbing a body part that is part of someone (called owner) that is not the player:
-	if the owner is alert and the owner is not aroused, say "Touching [the noun] while they are awake would be too awkward!" instead;
-	say "Touching [the noun]!";
+[don't touch alert people]
+Instead of performing sexual behaviour:
+	if the noun is a body part that is part of someone (called the owner) that is not the player:
+		if the owner is alert and the owner is not aroused:
+			say "Touching [the noun] while [if the owner is female]she[else]he[end if] is awake would be too awkward!";
+		else:
+			continue the action;
+	else:
+		continue the action;
 
-Before taking a garment that is worn by someone (called owner) that is not the player:
-	if the owner is alert and the owner is not aroused, say "Trying to remove [the noun] while [printed name of owner] is awake would be too awkward!" instead;
-	say "Removing [the noun]!";
+[don't undress alert people]
+Instead of taking a garment that is worn by someone (called the owner) that is not the player:
+	if the owner is alert and the owner is not aroused:
+		say "Trying to remove [the noun] while [printed name of owner] is awake would be too awkward!";
+	else:
+		continue the action;
+
+[can't take a bra from under a shirt]
+Instead of an actor taking or taking off a bra worn by someone (called the owner):	
+	if the owner is wearing a top or the owner is wearing a coverall:
+		say "[The actor] can't take off [if the owner is the player]your[else if the owner is female]her[else]his[end if] bra while wearing something over it.";	
+	else:
+		continue the action;
+
+[can't take underwear from under pants]
+Instead of an actor taking or taking off underwear worn by someone (called the owner):
+	if the owner is wearing a bottom or the owner is wearing a coverall:
+		say "[The actor] can't take off [if the owner is the player]your[else if the owner is female]her[else]his[end if] underwear while wearing something over it.";
+	else:
+		continue the action;
 
 [======================================]
 
@@ -486,7 +476,7 @@ Flora's textbooks are scenery on Flora's desk. Understand "marine" and "biology"
 
 Chapter 2 - Things
 
-The octopus is a thing. The printed name is "Octopus with a strap-on[unless the octopus incorporates the tentacle dildo] harness". The description is "A large stuffed octopus toy wearing a strap-on harness.[if the octopus incorporates the tentacle dildo] Mounted in the harness is a dildo shaped like a tentacle.[end if] Some stained spots make it clear that this homemade ride-on tentacle fucker has been well-loved. You can easily imagine Flora straddling it, tugging the cloth tentacles against her body, fantasizing about this sea creature ravishing her."
+The octopus is a thing. Understand "strap-on" and "black" and "leather" and "harness" as the octopus. The printed name is "Octopus with a strap-on[unless the octopus incorporates the tentacle dildo] harness". The description is "This large stuffed octopus toy is wearing a black leather strap-on harness.[if the octopus incorporates the tentacle dildo] Mounted in the harness is a dildo shaped like a tentacle.[end if] Some stained spots make it clear that this homemade ride-on tentacle fucker has been well-loved. You can easily imagine Flora straddling it, tugging the cloth tentacles against her body, fantasizing about this sea creature ravishing her."
 
 The tentacle dildo is a part of the octopus. The description is "This bright pink and purple dildo looks surprisingly realistic, with molded suckers and a bumpy texture."
 
@@ -498,6 +488,9 @@ A dream is a part of Flora's diary. The description is "In this dream, [one of]F
 
 Chapter 3 - Interactions
 
+Instead of pushing or pulling Flora's pillows:
+	try looking under Flora's pillows.
+
 Instead of looking under Flora's pillows for the first time:
 	now the vibrator is in Flora's Room;
 	say "A vibrator peeks out from under the pillow."
@@ -506,7 +499,7 @@ Instead of looking under Flora's bed for the first time:
 	now Flora's diary is in Flora's Room;
 	say "Just visible under the bed, you can see Flora's diary."
 
-Instead of searching Flora's stuffed animals:
+Instead of searching or pushing or pulling Flora's stuffed animals:
 	try looking under Flora's stuffed animals.
 
 Instead of looking under Flora's stuffed animals for the first time:
@@ -534,7 +527,7 @@ Chapter 1 - Scenery
 
 The dirty laundry basket is scenery in the bathroom. "The dirty laundry basket is filled to the brim with bras and panties. Why are women's underthings so much nicer than men's?"
 
-The bras-and-panties is scenery in the bathroom. The printed name is "bras and panties". Understand "bras" and "bra" and "panties" and "underwear" as the bras-and-panties. "This one is [one of]red satin[or]frilly and lacy[or]see-through black mesh[or]covered in cute little fish, must be Flora's[or]strappy and scandalous, must be Jo's[then at random]."
+The bra pile is scenery in the bathroom. The printed name is "bras and panties". Understand "bras" and "bra" and "panties" and "underwear" as the bra pile. "You grab one at random. This one is [one of]covered in cute little fish, must be Flora's[or]red satin[or]frilly and lacy[or]see-through black mesh[or]strappy and scandalous, must be Jo's[then at random]. After a moment, you put it back in the basket."
 
 Some fixtures are scenery in the bathroom. Understand "sink", "toilet", "faucet", "mirror", "cabinet", "tub", "basin", "towel", "bath", and "mat" as the fixtures. The description is "The bathroom fixtures are not very interesting."
 
@@ -544,9 +537,9 @@ The shower is an enterable scenery container in the bathroom. Understand "curtai
 
 Chapter 3 - Interactions
 
-Instead of smelling the bras-and-panties, say "They still smell kinda nice, but you put them down quickly, before you get caught again."
+Instead of smelling the bra pile, say "They smell kinda nice, but you put them down quickly, before you get caught again."
 
-Instead of taking the bras-and-panties, say "Oh no, not after what happened last time."
+Instead of taking the bra pile, say "Oh no, not after what happened last time."
 
 Instead of doing anything other than examining with the fixtures, say "You have more important things to do right now than fiddle with the bathroom fixtures."
 
@@ -584,6 +577,9 @@ The big purple dildo is a thing. The description is "A large, realistic-looking 
 
 Chapter 3 - Interactions
 
+Instead of pushing or pulling Jo's pillow:
+	try looking under Jo's pillow;
+
 Instead of looking under Jo's pillow for the first time:
 	now Jo's phone is in Jo's Room;
 	say "Tucked under the pillow, you see Jo's phone, the screen still unlocked!"
@@ -617,7 +613,11 @@ The yourself is a man.
 
 Book 2 - Jo
 
-Jo is a woman in the shower. "Jo is in the shower, lathering soap around her enormous tits. Without her glasses, she can't see very well. 'Is that you, Flora? Can you hand me towel, hon?'" The description of Jo is "Your stepmother has a lovely smile and enormous tits with prominent nipples. Her brunette hair is tied up in a bun. She has a tidy bush of dark pubic hair." Jo has arousal 80.
+Jo is a woman in the shower. "Jo is in the shower, lathering soap around her enormous tits. Without her glasses, she can't see very well. 'Is that you, Flora? Can you hand me towel, hon?'"
+
+The description of Jo is "Your stepmother has a lovely smile and enormous tits with prominent nipples. Her brunette hair is tied up in a bun. She has a tidy bush of dark pubic hair."
+
+Jo has arousal 80.
 
 Part 1 - Body Parts
 
@@ -633,7 +633,11 @@ Instead of touching Jo's clit, say "[if Jo is aroused]Jo groans and you feel a g
 
 Book 3 - Flora
 
-Flora is a woman in your room. "Flora is asleep on her back. She's kicked the blanket off, and looks restless." The description of Flora is "Your stepsister has a coy smile. Her wavy brunette hair hangs just past her shoulders, which, like her face, are covered in freckles. She is shorter than you, with a slim figure and small, perky breasts." Flora has alertness 0. Flora has arousal 30.
+Flora is a woman in your room. "Flora is asleep on her back. She's kicked the blanket off, and looks restless."
+
+The description of Flora is "Your stepsister has a coy smile. Her wavy brunette hair hangs just past her shoulders, which, like her face, are covered in freckles. She is shorter than you, with a slim figure and small, perky breasts."
+
+Flora has alertness 0. Flora has arousal 30.
 
 Part 1 - Body Parts
 
@@ -651,23 +655,14 @@ Flora is wearing underwear called the polka-dot panties. The description of the 
 
 Flora is wearing a shirt called the henley shirt. The description of the shirt is "Flora's shirt is a comfortable old henley shirt with purple sleeves and a deep v-neck. The fabric is thin and leaves little to the imagination."
 
-Flora is wearing pants called the pajama pants.
-
-Flora is wearing a skirt called the paisley skirt.
-
 Part 3 - Interactions
 
 [Check alertness before touching]
-[how can this apply to flora too?]
-Before [doing anything other than examining] touching or rubbing a body part that is part of Flora:
-	if Flora is not aroused:
-		say "Flora is not aroused.";
-		[alarm flora]
-	else:
-		say "Flora is aroused!";
-	if Flora is alert and Flora is not aroused:
-		say "Flora gasps in shock, and clamps her legs tightly together. 'What are you doing?' She angrily chases you out of her room.";
-		now the player is in the Hallway instead;
+Before performing sexual behaviour:
+	if Flora is touchable:
+		if Flora is alert and Flora is not aroused:
+			say "Flora gasps in shock, and clamps her legs tightly together. 'What are you doing?' She angrily chases you out of her room.";
+			now the player is in the Hallway instead;
 
 [Handle touching]
 Instead of touching or rubbing Flora's breast:
