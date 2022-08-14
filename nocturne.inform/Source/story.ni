@@ -98,43 +98,6 @@ Definition: a person is alert if their alertness is at least 50.
 
 Book 4 - Actions
 
-[
-- Most of these should handle "Verb [someone]" and "Verb [body part]"
-- Some should handle "with [toy/penis/fingers]"
-	- [x] touch, poke
-	- [x] rub, stroke, caress (are those the same?)
-	- [x] squeeze
-	- [x] pinch, pull (not always the same)
-	- [x] twist nipple
-	- [x] tease (gently touch)
-	- [x] slap
-	- [x] bite, harder
-	- [x] spit on
-	- [x] lick
-	- [x] suck, harder
-	- [x] open, spread legs/vagina/ass/mouth
-	- [x] finger, deeper
-	- [x] insert (put penis in mouth), deeper
-	- [x] put penis between tits/ass
-	- [x] fuck, harder
-	- [x] cum in/on face/mouth/tits/vagina/etc
-	- [x] talk dirty (increasing levels, allow her to react increasingly)
-	- [x] reassure, relax
-	- [x] encourage
-	- [x] cum for me
-	- [x] tell her she's dreaming
-	- [x] masturbate, jerk off
-	- [x] stroke penis
-	- [x] look under garment
-	- [x] lift, move, shift garment
-	- [x] remove, strip, undress
-- Requests "Flora, verb noun"
-	- [x] swallow
-	- [x] suck, blow me
-	- [x] rub
-	- [x] fuck
-]
-
 Part 1 - Extended Grammar
 
 [synonyms]
@@ -165,7 +128,7 @@ Check taking off somebody:
 Understand "you're dreaming" or "go back to sleep" as sleeping.
 
 [hold normally means "take"]
-Understand "hold [body part]" as squeezing.
+Understand "hold [body part]" as hugging.
 Understand "hold [someone]" as hugging.
 
 [put cock between tits]
@@ -181,14 +144,15 @@ Understand "tell [someone] [text]" as telling it about.
 Understand "talk [text] to [someone]" as telling it about (with nouns reversed).
 
 [Override existing commands]
+Understand the command "embrace" as something new.
 Understand the command "hug" as something new.
 Understand the command "screw" as something new.
 
 [Define some existing commands to be checked as sexual]
-Kissing is performing sexual behaviour.
-Touching is performing sexual behaviour.
-Rubbing is performing sexual behaviour.
-Squeezing is performing sexual behaviour.
+Kissing is performing sexual behavior.
+Touching is performing sexual behavior.
+Rubbing is performing sexual behavior.
+Squeezing is performing sexual behavior.
 Turning a body part is performing sexual behavior.
 Smelling a body part is performing sexual behavior.
 Tasting a body part is performing sexual behavior.
@@ -198,75 +162,75 @@ Part 2 - New and Updated Actions
 
 Hugging is an action applying to one thing.
 Understand "hug [something]" as hugging.
-Understand the command "cuddle" as "hug".
+Understand the command "cuddle" and "embrace" as "hug".
 Check an actor hugging:
 	try the actor kissing the noun instead;
 
 Biting is an action applying to one thing.
-Biting a body part is performing sexual behaviour.
-Biting someone is performing sexual behaviour.
+Biting a body part is performing sexual behavior.
+Biting someone is performing sexual behavior.
 Understand "bite [something]" as biting.
 Check an actor biting:
 	try the actor eating the noun instead;
 
 Teasing is an action applying to one thing.
-Teasing a body part is performing sexual behaviour.
-Teasing someone is performing sexual behaviour.
+Teasing a body part is performing sexual behavior.
+Teasing someone is performing sexual behavior.
 Understand "tease [something]" as teasing.
 Understand the command "caress" as "tease".
 Check an actor teasing:
 	try the actor touching the noun instead;
 
 Licking is an action applying to one thing.
-Licking a body part is performing sexual behaviour.
-Licking someone is performing sexual behaviour.
+Licking a body part is performing sexual behavior.
+Licking someone is performing sexual behavior.
 Understand "lick [something]" as licking.
 Check an actor licking:
 	try the actor tasting the noun instead;
 
 Sucking is an action applying to one thing.
-Sucking a body part is performing sexual behaviour.
-Sucking someone is performing sexual behaviour.
+Sucking a body part is performing sexual behavior.
+Sucking someone is performing sexual behavior.
 Understand "suck [something]" as sucking.
 Understand the command "blow" as "suck".
 Check an actor sucking:
 	try the actor eating the noun instead;
 
 Fucking is an action applying to one thing.
-Fucking is performing sexual behaviour.
+Fucking is performing sexual behavior.
 Understand "fuck [something]" as fucking.
 Understand the command "screw" and "bang" as "fuck".
 Check an actor fucking:
 	try the actor rubbing the noun instead;
 
 Spitting on is an action applying to one thing.
-Spitting on a body part is performing sexual behaviour.
-Spitting on someone is performing sexual behaviour.
+Spitting on a body part is performing sexual behavior.
+Spitting on someone is performing sexual behavior.
 Understand "spit on [something]" as spitting on.
 Check an actor spitting on:
 	say "That would be very rude!" instead.
 
 Cumming on is an action applying to one thing.
-Cumming on is performing sexual behaviour.
+Cumming on is performing sexual behavior.
 Understand "cum on [something]" as cumming on.
 Check an actor cumming on:
 	say "Cumming on [the noun] would be very rude!" instead.
 
 Cumming in is an action applying to one thing.
-Cumming in is performing sexual behaviour.
+Cumming in is performing sexual behavior.
 Understand "cum in [something]" as cumming in.
 Check an actor cumming in:
 	say "Cumming in [the noun] would be very rude!" instead.
 
 Cumming is an action applying to nothing.
-Cumming is performing sexual behaviour.
+Cumming is performing sexual behavior.
 Understand "cum" and "cum for me" as cumming.
-Understand the command "come" and "orgasm" and "squirt" as "cum".
+Understand the command "come" and "orgasm" and "jizz" and "squirt" as "cum".
 Check an actor cumming:
 	say "Cumming!" instead.
 
 Masturbating is an action applying to nothing.
-Masturbating is performing sexual behaviour.
+Masturbating is performing sexual behavior.
 Understand "masturbate" and "jerk off" and "rub one out" as masturbating.
 Check an actor masturbating:
 	if the actor incorporates a penis (called his cock):
@@ -275,10 +239,11 @@ Check an actor masturbating:
 		try the actor trying rubbing her clit instead;
 
 Fingerbanging is an action applying to one thing.
-Fingerbanging is performing sexual behaviour.
-Understand "fingerbang [body part]" as rubbing.
-Understand "fingerbang [someone]" as fingerbanging.
+Fingerbanging is performing sexual behavior.
+Understand "fingerbang [something]" as fingerbanging.
 Understand the command "finger" and "fingerfuck" as "fingerbang".
+Report fingerbanging:
+	say "You put your fingers in [the noun]."
 Check an actor fingerbanging someone:
 	if the noun is male and the noun incorporates an ass (called his anus):
 		try the actor rubbing his anus instead;
@@ -296,6 +261,7 @@ Check an actor reassuring:
 
 Encouraging is an action applying to one thing.
 Understand "encourage [someone]" as encouraging.
+Understand the command "excite" as "encourage".
 Check an actor encouraging:
 	increase the arousal of the noun by 5;
 	say "You try to arouse [the noun].";
@@ -342,6 +308,75 @@ Carry out alerting:
 	now the alertness of the noun is the number understood;
 	say "[The noun]'s alertness is now [the number understood]."
 
+Part 4 - Testing
+
+test alertness with "alert her to 100 / reassure her / showme her".
+
+test arousal with "arouse her to 0 / encourage her / showme her".
+
+test dreaming with "tell her she's dreaming / flora, you're dreaming / flora, go back to sleep".
+
+test reset with "alert her to 0 / arouse her to 100".
+
+test her with "spank her / kiss her / rub her / squeeze her / touch her / twist her / bite her / cum on her / hold her / hug her / lick her / spit on her / suck her / suck on her / tease her".
+
+test boob with "spank boob / kiss boob / rub boob / squeeze boob / touch boob / twist boob / bite boob / cum on boob / hold boob / hug boob / lick boob / spit on boob / suck boob / suck on boob / tease boob".
+
+test nipple with "touch her nipple / pinch her nipple / pull her nipple / twist her nipple / suck her nipple / bite her nipple".
+
+test vibrator with "purloin vibrator / touch clit with vibrator / rub clit with vibrator / tease clit with vibrator / put vibrator in pussy / use vibrator on her / touch her with vibrator".
+
+test inserting with "purloin purple dildo / insert cock into pussy / stick cock in her ass / stuff cock inside her mouth / put cock between boobs / insert dildo into pussy / stick dildo in her ass / stuff dildo inside her mouth / put dildo between boobs"
+
+test undressing with "take off bra / take off shirt / look under bra / raise bra / strip bra / look under panties / lower panties / undress her".
+
+test instructions with "flora, swallow my cock / flora, suck my cock / flora, blow me / flora, go down on me / flora, rub my cock / flora, fuck me / flora, rub one out / flora, make me cum / flora, cum for me".
+
+test opening with "open legs / spread pussy / spread her ass / open her mouth"
+
+test foreplay with "talk dirty to her / spread pussy / smell pussy / taste pussy / lick pussy / eat pussy / drink pussy / finger pussy / fuck pussy".
+
+test fucking with "spread her / finger her / enter her / fuck her".
+
+test masturbation with "stroke cock / rub cock / masturbate / jerk off".
+
+test cumming with "cum / jizz on her / squirt in her / cum for me".
+
+[
+- attack: slap, smack, spank
+- inserting it into: put it in, put it between, stick, stuff
+- kissing
+- rubbing: stroke
+- squeezing: pinch
+- touching: feel, poke
+- turning: twist
+
+- shed: strip, undress, take off garment
+- look under
+- pushing: lower, move, press, shift
+- pulling: lift, raise
+
+- enter
+- open: spread
+- close
+
+- drinking: swallow
+- eating
+- smelling: sniff
+- tasting
+
+- biting
+- cumming (in/on): orgasm, squirt
+- fingerbanging: finger
+- fucking: bang, screw
+- hugging: cuddle, embrace
+- licking
+- masturbating: jerk off, rub one out
+- spitting on
+- sucking: blow
+- teasing: caress
+]
+
 [--------------------------------------]
 
 Book 5 - Rules
@@ -370,7 +405,7 @@ Part 1 - Status Checks
 [Note: These use Instead so they can be overidden by more specific Before rules for individual NPCs. They can't use Check because they apply to multiple actions.]
 
 [don't touch alert people]
-Instead of performing sexual behaviour:
+Instead of performing sexual behavior:
 	if the noun is a body part that is part of someone (called the owner) that is not the player:
 		if the owner is alert and the owner is not aroused:
 			say "Touching [the noun] while [if the owner is female]she[else]he[end if] is awake would be too awkward!";
@@ -658,7 +693,7 @@ Flora is wearing a shirt called the henley shirt. The description of the shirt i
 Part 3 - Interactions
 
 [Check alertness before touching]
-Before performing sexual behaviour:
+Before performing sexual behavior:
 	if Flora is touchable:
 		if Flora is alert and Flora is not aroused:
 			say "Flora gasps in shock, and clamps her legs tightly together. 'What are you doing?' She angrily chases you out of her room.";
