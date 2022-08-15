@@ -7,7 +7,6 @@ TODO:
 - add achievements
 - Change "Flora (verbs) yourself" to "Flora (verbs) you"
     - "[The actor] [touch] [us]."
-- Better organization of actions & rules
 
 CLOTHING:
 - Before inserting, check if body part is covered
@@ -119,8 +118,89 @@ Definition: a person is alert if their alertness is at least 50.
 
 Book 4 - Actions
 
-Part 1 - Synonyms for Existing Actions
+Part 1 - Disable Some Standard Rules
 
+The block attacking rule does nothing when the noun is a body part.
+The block giving rule is not listed in the check giving it to rules.
+The block kissing rule is not listed in the check kissing rules.
+The can't put onto what's not a supporter rule does nothing when the second noun is a body part.
+The can't put onto what's not a supporter rule does nothing when the second noun is a person.
+The can't remove from people rule does nothing when the actor is the player.
+The can't rub another person rule is not listed in the check rubbing rules.
+The can't take off what's not worn rule does nothing when the actor is the player.
+The can't take people's possessions rule does nothing when the actor is the player.
+The innuendo about squeezing people rule is not listed in the check squeezing rules.
+The report pulling rule does nothing when the noun is a body part.
+The report touching other people rule does nothing when the actor is the player.
+The report touching things rule does nothing when the actor is the player.
+The report touching yourself rule does nothing when the actor is the player.
+The updated block sleeping rule substitutes for the block sleeping rule.
+The updated report squeezing rule substitutes for the report squeezing rule.
+The updated report touching things rule substitutes for the report touching things rule.
+The updated report turning rule substitutes for the report turning rule.
+
+Part 2 - Persuasion Rules
+
+[horny people are willing to do stuff]
+Persuasion rule for asking an aroused person to try doing something:
+	persuasion succeeds.
+
+[attemping to soothe is always allowed, we check if they're too alert elsewhere]
+Persuasion rule for asking someone to try sleeping:
+	persuasion succeeds.
+
+["better things to do" makes no sense if they're asleep]
+The requested actions require persuasion rule response (A) is "[The noun] [if the noun is not alert]is too drowsy to respond to your request[else][have] better things to do[end if]."
+
+Part 3 - Additional Vocabulary
+
+["flora, touch your clit"]
+Understand "your" or "yours" as a thing when the item described is enclosed by the person asked.
+
+[generic gendered terms]
+Understand "man" or "gentleman" or "guy" or "dude" or "boy" as a man. Understand "girl" or "gal" or "woman" or "lady" as a woman.
+
+Part 4 - More Verbs Needed for Adaptive Text
+
+To bite is a verb.
+To cum is a verb.
+To finger is a verb.
+To fuck is a verb.
+To hug is a verb.
+To kiss is a verb.
+To lick is a verb.
+To lower is a verb.
+To raise is a verb.
+To spank is a verb.
+To spit is a verb.
+To suck is a verb.
+To twist is a verb.
+
+Part 5 - Some Standard Actions can be Sexual
+
+Eating is possibly sexual behavior.
+Drinking is possibly sexual behavior.
+Kissing is possibly sexual behavior.
+Inserting something into is possibly sexual behavior.
+Opening is possibly sexual behavior.
+Pulling a body part is possibly sexual behavior.
+Rubbing is possibly sexual behavior.
+Smelling is possibly sexual behavior.
+Squeezing is possibly sexual behavior.
+Tasting is possibly sexual behavior.
+Touching is possibly sexual behavior.
+Turning a body part is possibly sexual behavior.
+
+Part 6 - Understand Standard Actions in New Ways
+
+[remap embrace and hug from kissing to new hugging action]
+Understand the command "embrace" as something new.
+Understand the command "hug" as something new.
+
+[remap screw from turning to fucking]
+Understand the command "screw" as something new.
+
+[additional simple action synonyms]
 Understand the command "spread" as "open".
 Understand the command "raise" or "lift" as "pull".
 Understand the command "lower" as "push".
@@ -129,23 +209,12 @@ Understand the command "stroke" as "rub".
 Understand the command "strip" or "undress" as "shed".
 Understand the command "pinch" as "squeeze".
 Understand the command "poke" and "caress" and "tease" as "touch".
-Understand the command "use" as "put". [use X on Y]
 
-Part 2 - Extend Existing Actions
+[for "use X on Y"]
+Understand the command "use" as "put".
 
-[Define some existing commands to be checked as sexual]
-Eating a body part is performing sexual behavior.
-Drinking a body part is performing sexual behavior.
-Kissing is performing sexual behavior.
-Inserting something into is performing sexual behavior.
-Opening a body part is performing sexual behavior.
-Pulling a body part is performing sexual behavior.
-Rubbing is performing sexual behavior.
-Smelling a body part is performing sexual behavior.
-Squeezing is performing sexual behavior.
-Tasting a body part is performing sexual behavior.
-Touching is performing sexual behavior.
-Turning a body part is performing sexual behavior.
+[add phrases the player might try to say]
+Understand "you're dreaming" or "go back to sleep" as sleeping.
 
 [hold normally means "take"]
 Understand "hold [body part]" as hugging.
@@ -160,77 +229,50 @@ Understand "kiss [something]" as kissing.
 [allow stripping people as well as things]
 Understand "shed [someone]" as taking off.
 
-[add phrases the player might try to say]
-Understand "you're dreaming" or "go back to sleep" as sleeping.
+["talk dirty to flora"]
+Understand "talk [text] to [someone]" as telling it about (with nouns reversed).
 
 ["tell flora she's dreaming"]
 Understand "tell [someone] [text]" as telling it about.
 
-["talk dirty to flora"]
-Understand "talk [text] to [someone]" as telling it about (with nouns reversed).
+Part 7 - Update Standard Actions
 
-["flora, touch your clit"]
-Understand "your" or "yours" as a thing when the item described is enclosed by the person asked.
+[TODO: these should all use check/carry out/report]
 
-Part 3 - Override Existing Actions
+[Answering It That]
 
-[remap embrace and hug from kissing to new hugging action]
-Understand the command "embrace" as something new.
-Understand the command "hug" as something new.
+Instead of answering someone that "go down on me":
+	if the actor incorporates a cock (called his cock):
+		try asking the noun to try sucking his cock instead;
+	else if the actor incorporates a clit (called her clit):
+		try asking the noun to try licking her clit instead;
 
-[remap screw from turning to fucking]
-Understand the command "screw" as something new.
+Instead of answering someone that "make me cum":
+	try the actor cumming;
 
-Understand "man" or "gentleman" or "guy" or "dude" or "boy" as a man. Understand "girl" or "gal" or "woman" or "lady" as a woman.
+[Drinking]
 
-Part 4 - Easter Eggs
-
-Understand "plugh" or "xyzzy" or "frotz" or "plover" as a mistake ("TODO: What [we] do isn't magic. It's science.").
-
-Part 5 - Update Existing Actions
-
-To kiss is a verb.
-Report an actor kissing:
-	say "[The actor] [kiss] [the noun]."
-
-Report an actor squeezing (this is the updated report squeezing rule):
-	say "[The actor] [squeeze] [the noun]."
-The updated report squeezing rule substitutes for the report squeezing rule.
-
-Report an actor touching (this is the updated report touching things rule):
-	say "[The actor] [touch] [the noun]."
-The updated report touching things rule substitutes for the report touching things rule.
-
-Report an actor turning (this is the updated report turning rule):
-	say "[The actor] [turn] [the noun]."
-The updated report turning rule substitutes for the report turning rule.
-
-Report an actor pulling a body part:
-	say "[The actor] [pull] [the noun]."
-
-Instead of looking under a garment:
-	say "[The actor] [look] under [the noun]."
-
-To raise is a verb.
-Instead of pulling a garment:
-	say "[The actor] [raise] [the noun]."
-
-To lower is a verb.
-Instead of pushing a garment:
-	say "[The actor] lower [the noun]."
-
-Instead of opening:
-	if the noun is a person:
-		if the noun incorporates a pussy (called her pussy):
-			try opening her pussy instead;
-	else if the noun is a leg:
-		say "You open [the noun][s].";
-		rule succeeds;
-	else if the noun is openable:
-		say "You open [the noun].";
-		rule succeeds;
+Check an actor drinking something:
+	if the noun is a body part:
+		try the actor sucking the noun instead;
 	else:
 		continue the action;
+
+[Eating]
+
+Instead of eating:
+	if the noun is a pussy or the noun is an ass:
+		say "You eat [the noun].";
+	else:
+		continue the action;
+
+[Entering]
+
+Instead of entering:
+	if the noun is a person:
+		try fucking the noun instead;
+		
+[Inserting]
 
 Instead of inserting:
 	if the second noun is a person:
@@ -245,36 +287,60 @@ Instead of inserting:
 	else:
 		continue the action;
 
-Instead of eating:
-	if the noun is a pussy or the noun is an ass:
-		say "You eat [the noun].";
-	else:
-		continue the action;
+[Kissing]
 
-Check an actor drinking something:
-	if the noun is a body part:
-		try the actor sucking the noun instead;
-	else:
-		continue the action;
+Report an actor kissing:
+	say "[The actor] [kiss] [the noun]."
 
-Instead of entering:
+[Looking Under]
+
+Instead of looking under a garment:
+	say "[The actor] [look] under [the noun]."
+
+[Opening]
+
+Instead of opening:
 	if the noun is a person:
-		try fucking the noun instead;
-		
-Instead of telling someone about "dirty":
-	try encouraging the noun instead;
-		
-Instead of telling someone about "she's dreaming":
-	try asking the noun to try sleeping;
+		if the noun incorporates a pussy (called her pussy):
+			try opening her pussy instead;
+	else if the noun is a leg:
+		say "You open [the noun][s].";
+		rule succeeds;
+	else if the noun is openable:
+		say "You open [the noun].";
+		rule succeeds;
+	else:
+		continue the action;
 
-Instead of answering someone that "go down on me":
-	if the actor incorporates a cock (called his cock):
-		try asking the noun to try sucking his cock instead;
-	else if the actor incorporates a clit (called her clit):
-		try asking the noun to try licking her clit instead;
+[Pulling]
 
-Instead of answering someone that "make me cum":
-	try the actor cumming;
+Report an actor pulling a body part:
+	say "[The actor] [pull] [the noun]."
+
+Instead of pulling a garment:
+	say "[The actor] [raise] [the noun]."
+
+Instead of pulling anything that is scenery:
+	say "You don't need to move that right now."
+
+[Pushing]
+
+Instead of pushing a garment:
+	say "[The actor] lower [the noun]."
+
+Instead of pushing anything that is scenery:
+	say "You don't need to move that right now."
+
+[Putting It On]
+
+Instead of an actor putting something on:
+	if the second noun is a person:
+		if the second noun incorporates a clit (called her clit):
+			try the actor touching her clit with the noun instead;
+	else if the second noun is a body part:
+		try the actor touching the second noun with the noun instead;
+
+[Sleeping]
 
 Check an actor sleeping (this is the updated block sleeping rule):
 	if the actor is the player:
@@ -286,82 +352,120 @@ Check an actor sleeping (this is the updated block sleeping rule):
 			rule succeeds;
 		else:
 			try reassuring the actor instead.
-The updated block sleeping rule substitutes for the block sleeping rule.
 
-Instead of an actor putting something on:
-	if the second noun is a person:
-		if the second noun incorporates a clit (called her clit):
-			try the actor touching her clit with the noun instead;
-	else if the second noun is a body part:
-		try the actor touching the second noun with the noun instead;
+[Squeezing]
 
-To twist is a verb.
+Report an actor squeezing (this is the updated report squeezing rule):
+	say "[The actor] [squeeze] [the noun]."
+
+[Taking]
+
+Instead of taking anything that is scenery:
+	say "You don't need that right now."
+
+[Telling It About]
+
+Instead of telling someone about "dirty":
+	try encouraging the noun instead;
+		
+Instead of telling someone about "she's dreaming":
+	try asking the noun to try sleeping;
+
+[Touching]
+
+Report an actor touching (this is the updated report touching things rule):
+	say "[The actor] [touch] [the noun]."
+
+[Turning]
+
 Check an actor turning a nipple:
 	say "[The actor] [twist] [the noun].";
-	rule succeeds;
-	
-The requested actions require persuasion rule response (A) is "[The noun] [if the noun is not alert]is too drowsy to respond to your request[else][have] better things to do[end if]."
+	rule succeeds; [suppress generic turn answer]
 
-Part 6 - New Actions
+Report an actor turning (this is the updated report turning rule):
+	say "[The actor] [turn] [the noun]."
 
-To bite is a verb.
+Part 8 - New Actions
+
+[Biting]
+
 Biting is an action applying to one thing.
-Biting a body part is performing sexual behavior.
-Biting someone is performing sexual behavior.
+Biting is possibly sexual behavior.
 Understand "bite [something]" as biting.
+
 Report an actor biting:
 	say "[The actor] [bite] [the noun]."
 
-To cum is a verb.
+[Cumming]
+
 Cumming is an action applying to nothing.
-Cumming is performing sexual behavior.
+Cumming is possibly sexual behavior.
 Understand "cum" and "cum for me" as cumming.
 Understand the command "come" and "orgasm" and "jizz" and "squirt" as "cum".
+
 Report an actor cumming:
 	say "[The actor] [cum]."
 
+[Cumming In]
+
 Cumming in is an action applying to one thing.
-Cumming in is performing sexual behavior.
+Cumming in is possibly sexual behavior.
 Understand "cum in [something]" as cumming in.
+
 Report an actor cumming in:
 	say "[The actor] [cum] in [the noun]."
 
+[Cumming On]
+
 Cumming on is an action applying to one thing.
-Cumming on is performing sexual behavior.
+Cumming on is possibly sexual behavior.
 Understand "cum on [something]" as cumming on.
+
 Report an actor cumming on:
 	say "[The actor] [cum] on [the noun]."
+
+[Encouraging]
 
 Encouraging is an action applying to one thing.
 Understand "encourage [someone]" as encouraging.
 Understand the command "excite" as "encourage".
+
 Check an actor encouraging:
 	increase the arousal of the noun by 5;
+
 Report an actor encouraging:
 	say "You whisper dirty little nothings in [the noun]'s ear, getting her hot.";
 
-To finger is a verb.
+[Fingering]
+
 Fingering is an action applying to one thing.
-Fingering is performing sexual behavior.
+Fingering is possibly sexual behavior.
 Understand "finger [something]" as fingering.
 Understand the command "fingerbang" and "fingerfuck" as "finger".
+
 Check an actor fingering someone:
 	if the noun incorporates a pussy (called her pussy):
 		try the actor fingering her pussy instead;
+
 Report an actor fingering:
 	say "[The actor] [finger] [the noun]."
 
-To fuck is a verb.
+[Fucking]
+
 Fucking is an action applying to one thing.
-Fucking is performing sexual behavior.
+Fucking is possibly sexual behavior.
 Understand "fuck [something]" as fucking.
 Understand the command "screw" and "bang" as "fuck".
+
 Report an actor fucking:
 	say "[The actor] [fuck] [the noun]."
 
+[Fucking It With]
+
 Fucking it with is an action applying to two things.
-Fucking something with is performing sexual behavior.
+Fucking something with is possibly sexual behavior.
 Understand "fuck [other things] with [something]" as fucking it with.
+
 Check an actor fucking something with:
 	if the noun is a person:
 		if the noun incorporates a pussy (called her pussy):
@@ -372,80 +476,98 @@ Check an actor fucking something with:
 		else:
 			try the actor rubbing the noun with the second noun instead;
 
-To hug is a verb.
+[Hugging]
+
 Hugging is an action applying to one thing.
-Hugging a body part is performing sexual behavior.
+Hugging a body part is possibly sexual behavior.
 Understand "hug [something]" as hugging.
 Understand the command "cuddle" and "embrace" as "hug".
+
 Report an actor hugging:
 	say "[The actor] [hug] [the noun]."
 
-To lick is a verb.
+[Licking]
+
 Licking is an action applying to one thing.
-Licking a body part is performing sexual behavior.
-Licking someone is performing sexual behavior.
+Licking is possibly sexual behavior.
 Understand "lick [something]" as licking.
+
 Report an actor licking:
 	say "[The actor] [lick] [the noun]."
 
+[Masturbating]
+
 Masturbating is an action applying to nothing.
-Masturbating is performing sexual behavior.
+Masturbating is possibly sexual behavior.
 Understand "masturbate" and "jerk off" and "rub one out" as masturbating.
+
 Check an actor masturbating:
 	if the actor incorporates a cock (called his cock):
 		try the actor trying rubbing his cock instead;
 	else if the actor incorporates a clit (called her clit):
 		try the actor trying rubbing her clit instead;
 
+[Reassuring]
+
 Reassuring is an action applying to one thing.
 Understand "reassure [someone]" as reassuring.
+
 Check an actor reassuring:
 	if the alertness of the noun is at least 5:
 		decrease the alertness of the noun by 5;
 	else:
 		now the alertness of the noun is 0;
+
 Report an actor reassuring:
 	if the actor is alert:
 		say "You whisper reassuring things in [the noun]'s ear. It seems to settle them a bit.";
 	else:
 		say "Worried she's starting to wake up, you whisper reassuring things in [the noun]'s ear. It seems to help, and she breathes a bit deeper.";
 
+[Rubbing]
+
 Rubbing it with is an action applying to two things.
-Rubbing something with is performing sexual behavior.
+Rubbing something with is possibly sexual behavior.
 Understand "rub [other things] with [something]" as rubbing it with.
+
 Check an actor rubbing something with:
 	if the noun is a person:
 		if the noun incorporates a clit (called her clit):
 			try the actor rubbing her clit with the second noun instead.
+
 Report an actor rubbing something with:
 	say "[The actor] [rub] [the noun] with [the second noun]."
 
-To spank is a verb.
+[Spanking]
+
 Spanking is an action applying to one thing.
-Spanking a body part is performing sexual behavior.
-Spanking someone is performing sexual behavior.
+Spanking is possibly sexual behavior.
 Understand "spank [something]" as spanking.
 Understand the command "slap" or "smack" as "spank".
+
 Check an actor spanking someone:
 	if the noun incorporates an ass (called their ass):
 		try the actor spanking their ass instead.
+
 Report an actor spanking:
 	say "[The actor] [spank] [the noun]."
 
-To spit is a verb.
+[Spitting]
+
 Spitting on is an action applying to one thing.
-Spitting on a body part is performing sexual behavior.
-Spitting on someone is performing sexual behavior.
+Spitting on is possibly sexual behavior.
 Understand "spit on [something]" as spitting on.
+
 Report an actor spitting on:
 	say "[The actor] [spit] on [the noun]."
 
-To suck is a verb.
+[Sucking]
+
 Sucking is an action applying to one thing.
-Sucking a body part is performing sexual behavior.
-Sucking someone is performing sexual behavior.
+Sucking is possibly sexual behavior.
 Understand "suck [something]" and "suck on [something]" as sucking.
 Understand the command "blow" as "suck".
+
 Check an actor sucking:
 	if the noun is a cock incorporated by the player:
 		if the actor is the player:
@@ -455,22 +577,81 @@ Check an actor sucking:
 			say "[suck your own dick]" instead;
 		else:
 			try the actor sucking your cock instead;
+
 Report an actor sucking:
 	say "[The actor] [suck] [the noun]."
+
 To say suck your own dick:
 	say "You know, my cousin Walter broke his neck trying to suck his own dick. I swear, bible truth. My aunt found him. It was a mess. He was on his bed, with his legs doubled over himself. My aunt freaked out. He had his dick in his mouth, balls resting on his lips. He really made it. But at what a price?"
 
+[Touching It With]
+
 Touching it with is an action applying to two things.
-Touching something with is performing sexual behavior.
+Touching something with is possibly sexual behavior.
 Understand "touch [other things] with [something]" as touching it with.
+
 Check an actor touching something with:
 	if the noun is a person:
 		if the noun incorporates a clit (called her clit):
 			try the actor touching her clit with the second noun instead.
+
 Report an actor touching something with:
 	say "[The actor] [touch] [the noun] with [the second noun]."
 
-Part 7 - Debugging - Not for release
+Part 9 - Easter Eggs
+
+[Magic Words]
+Understand "plugh" or "xyzzy" or "frotz" or "plover" as a mistake ("TODO: What [we] do isn't magic. It's science.").
+
+Part 10 - Status Check Rules
+
+[Note: These should be Check rules for easy overriding, but they apply to multiple actions, so they use Instead. They can be overridded with Before checks.]
+
+[don't touch alert people]
+Instead of possibly sexual behavior (this is the don't touch alert people rule):
+	if the noun is a body part that is part of someone (called the owner) that is not the player and the owner is alert and the owner is not aroused:
+		say "Touching [the noun] while [if the owner is female]she[else]he[end if] is awake would be too awkward!";
+	else if the second noun is a body part that is part of someone (called the owner) that is not the player and the owner is alert and the owner is not aroused:
+		say "Touching [the second noun] while [if the owner is female]she[else]he[end if] is awake would be too awkward!";
+	else if the noun is a person that is not the player and the noun is alert and the noun is not aroused:
+		say "Touching [the noun] while [if the noun is female]she[else]he[end if] is awake would be too awkward!";
+	else:
+		continue the action;
+
+[don't undress alert people]
+Instead of taking or taking off a garment that is worn by someone (called the owner) that is not the player (this is the don't undress alert people rule):
+	if the owner is alert and the owner is not aroused:
+		say "Trying to remove [the noun] while [printed name of owner] is awake would be too awkward!";
+	else:
+		continue the action;
+
+Part 11 - Undressing Rules
+
+[Note: These should be Check rules for easy overriding, but they apply to multiple actions, so they use Instead. They can be overridded with Before checks.]
+
+[can't take a bra from under a shirt]
+Instead of an actor taking or taking off a bra worn by someone (called the owner) (this is the check if the bra is covered rule):
+	if the owner is wearing a top or the owner is wearing a coverall:
+		say "[The actor] can't take off [if the owner is the player]your[else if the owner is female]her[else]his[end if] bra while [if the owner is female]she[else]he[end if] is wearing something over it.";
+	else:
+		continue the action;
+		
+[can't take underwear from under pants]
+Instead of an actor taking or taking off underwear worn by someone (called the owner) (this is the check if the underwear is covered rule):
+	if the owner is wearing a bottom or the owner is wearing a coverall:
+		say "[The actor] can't take off [if the owner is the player]your[else if the owner is female]her[else]his[end if] underwear while [if the owner is female]she[else]he[end if] is wearing something over it.";	else:
+		continue the action;
+
+[when strip targets a person, remove a random garment]
+Check taking off somebody (this is the stripping a person rule):
+	if the noun is wearing something:
+		let random-garment be a random thing worn by the noun;
+		say "[The noun] is wearing [a list of things worn by the noun]. You decide to remove [random-garment].";
+		try taking off random-garment instead;
+	otherwise:
+		say "But [the noun] [are] already naked!" instead;
+
+Part 12 - Debugging - Not for release
 
 Arousing is an action applying to one thing and one number. Understand "arouse [someone] to [number]" as arousing.
 
@@ -519,7 +700,7 @@ When play begins (this is the run property checks at the start of play rule):
 			if description of the item is "":
 				say "[item] has no description."
 
-Part 8 - Testing
+Part 13 - Testing
 
 test alertness with "reassure her / debug her / tell her she's dreaming / debug her / flora, you're dreaming / debug her / flora, go back to sleep / debug her".
 
@@ -552,93 +733,6 @@ test masturbation with "stroke cock / rub cock / masturbate / jerk off".
 test cumming with "cum / jizz on her / squirt in her / cum for me".
 
 test body with "x her / x her face / x her mouth / x her breast / x her nipple / x her clit / x her pussy / x her ass"
-
-[--------------------------------------]
-
-Book 5 - Rules
-
-Part 1 - Disable Core Rules
-
-The can't take people's possessions rule does nothing when the actor is the player.
-The can't take off what's not worn rule does nothing when the actor is the player.
-The can't remove from people rule does nothing when the actor is the player.
-The block giving rule is not listed in the check giving it to rules.
-The block attacking rule does nothing when the noun is a body part.
-The block kissing rule is not listed in the check kissing rules.
-The innuendo about squeezing people rule is not listed in the check squeezing rules.
-The report touching yourself rule does nothing when the actor is the player.
-The report touching things rule does nothing when the actor is the player.
-The report touching other people rule does nothing when the actor is the player.
-The the can't rub another person rule is not listed in the check rubbing rules.
-The report pulling rule does nothing when the noun is a body part.
-The can't put onto what's not a supporter rule does nothing when the second noun is a body part.
-The can't put onto what's not a supporter rule does nothing when the second noun is a person.
-
-Part 2 - Persuasion Rules
-
-[horny people are willing to do stuff]
-Persuasion rule for asking an aroused person to try doing something:
-	persuasion succeeds.
-
-Persuasion rule for asking someone to try sleeping:
-	persuasion succeeds.
-
-Part 3 - Scenery Rules
-
-[better messages when taking scenery]
-Instead of taking anything that is scenery:
-	say "You don't need that right now."
-
-[better messages when moving scenery]
-Instead of pushing or pulling anything that is scenery:
-	say "You don't need to move that right now."
-
-Part 4 - Status Check Rules
-
-[Note: These are Instead rules so they can be overidden by more specific Before rules for individual NPCs. They can't be Check rules because they apply to multiple actions.]
-
-[don't touch alert people]
-Instead of performing sexual behavior (this is the don't touch alert people rule):
-	if the noun is a body part that is part of someone (called the owner) that is not the player and the owner is alert and the owner is not aroused:
-		say "Touching [the noun] while [if the owner is female]she[else]he[end if] is awake would be too awkward!";
-	else if the second noun is a body part that is part of someone (called the owner) that is not the player and the owner is alert and the owner is not aroused:
-		say "Touching [the second noun] while [if the owner is female]she[else]he[end if] is awake would be too awkward!";
-	else if the noun is a person that is not the player and the noun is alert and the noun is not aroused:
-		say "Touching [the noun] while [if the noun is female]she[else]he[end if] is awake would be too awkward!";
-	else:
-		continue the action;
-
-[don't undress alert people]
-Instead of taking a garment that is worn by someone (called the owner) that is not the player (this is the don't undress alert people rule):
-	if the owner is alert and the owner is not aroused:
-		say "Trying to remove [the noun] while [printed name of owner] is awake would be too awkward!";
-	else:
-		continue the action;
-
-Part 5 - Undressing Rules
-
-[can't take a bra from under a shirt]
-Instead of an actor taking or taking off a bra worn by someone (called the owner) (this is the check if the bra is covered rule):
-	if the owner is wearing a top or the owner is wearing a coverall:
-		say "[The actor] can't take off [if the owner is the player]your[else if the owner is female]her[else]his[end if] bra while [if the owner is female]she[else]he[end if] is wearing something over it.";	
-	else:
-		continue the action;
-
-[can't take underwear from under pants]
-Instead of an actor taking or taking off underwear worn by someone (called the owner) (this is the check if the underwear is covered rule):
-	if the owner is wearing a bottom or the owner is wearing a coverall:
-		say "[The actor] can't take off [if the owner is the player]your[else if the owner is female]her[else]his[end if] underwear while [if the owner is female]she[else]he[end if] is wearing something over it.";
-	else:
-		continue the action;
-
-[when strip targets a person, remove a random garment]
-Check taking off somebody (this is the stripping a person rule):
-	if the noun is wearing something:
-		let random-garment be a random thing worn by the noun;
-		say "[The noun] is wearing [a list of things worn by the noun]. You decide to remove [random-garment].";
-		try taking off random-garment instead;
-	otherwise:
-		say "But [the noun] [are] already naked!" instead;
 
 [======================================]
 
@@ -955,7 +1049,7 @@ Flora is wearing a shirt called the henley shirt. The description of the shirt i
 Part 3 - Interactions
 
 [Check alertness before touching]
-Before performing sexual behavior (this is the check if Flora is alert rule):
+Before possibly sexual behavior (this is the check if Flora is alert rule):
 	if the noun is Flora or the noun is part of Flora:
 		if Flora is alert and Flora is not aroused:
 			say "Flora gasps in shock, and clamps her legs tightly together. 'What are you doing?' She angrily chases you out of her room.";
