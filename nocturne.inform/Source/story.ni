@@ -2,16 +2,8 @@
 
 [
 TODO:
-- find a gender neutral word for 80+ arousal
 - add achievements
-
-CLOTHING:
-- Before inserting, check if body part is covered
-- clothing modifies interactions (less arousal through clothing? no insertion?)
-
-FLORA:
-- once flora's horny level exceeds X, she mumbles your name in her sleep
-- describe what flora is wearing so you can strip her
+- wait to pass time for Flora to fall asleep again
 ]
 
 [======================================]
@@ -34,6 +26,8 @@ Use American dialect and the serial comma.
 [--------------------------------------]
 
 Book 1 - Anatomy
+
+Part 1 - Body Parts
 
 [Note: some of these should be part of every person, but we say they're part of every woman because it's annoying to have to specify if you say "pinch nipple" and the game asks if you mean your nipple or Flora's nipple.]
 
@@ -62,6 +56,19 @@ A cock is a kind of body part. A cock is part of every man. Understand "penis" a
 
 A finger is a kind of body part. A finger is part of every person. The description is "digital."
 
+Part 2 - Body Part Coverage
+
+Body-area is a kind of value. The body-areas are chest, junk.
+
+Belonging relates various things to one body-area. The verb to belong (it belongs to, they belong to, it is belonging to, it belonged to) implies the belonging relation.
+
+Every breast belongs to the chest.
+Every nipple belongs to the chest.
+Every clit belongs to the junk.
+Every pussy belongs to the junk.
+Every ass belongs to the junk.
+Every cock belongs to the junk.
+
 [--------------------------------------]
 
 Book 2 - Clothing
@@ -79,8 +86,6 @@ A skirt and pants are kinds of bottoms. The plural of pants is pants.
 A bra and underwear are kinds of undergarments. The plural of underwear is underwear.
 
 Part 2 - Garment Coverage
-
-Body-area is a kind of value. The body-areas are chest, junk.
 
 Covering relates various things to one body-area. The verb to cover (it covers, they cover, it is covering, it is covered) implies the covering relation.
 
@@ -196,7 +201,16 @@ Tasting is possibly sexual behavior.
 Touching is possibly sexual behavior.
 Turning a body part is possibly sexual behavior.
 
-Part 6 - Understand Standard Actions in New Ways
+Part 6 - Some Standard Actions don't work through clothes
+
+Eating is possibly uncovered behavior.
+Inserting is possibly uncovered behavior.
+Opening is possibly uncovered behavior.
+Pulling is possibly uncovered behavior.
+Tasting is possibly uncovered behavior.
+Turning is possibly uncovered behavior.
+
+Part 7 - Understand Standard Actions in New Ways
 
 [remap embrace and hug from kissing to new hugging action]
 Understand the command "embrace" as something new.
@@ -240,7 +254,7 @@ Understand "talk [text] to [someone]" as telling it about (with nouns reversed).
 ["tell flora she's dreaming"]
 Understand "tell [someone] [text]" as telling it about.
 
-Part 7 - Update Standard Actions
+Part 8 - Update Standard Actions
 
 [Answering It That]
 
@@ -386,12 +400,13 @@ Check an actor turning a nipple:
 Report an actor turning (this is the updated report turning rule):
 	say "[The actor] [turn] [the noun]."
 
-Part 8 - New Actions
+Part 9 - New Actions
 
 [Biting]
 
 Biting is an action applying to one thing.
 Biting is possibly sexual behavior.
+Biting is possibly uncovered behavior.
 Understand "bite [something]" as biting.
 
 Report an actor biting:
@@ -414,7 +429,12 @@ Report an actor cumming:
 
 Cumming in is an action applying to one thing.
 Cumming in is possibly sexual behavior.
+Cumming in is possibly uncovered behavior.
 Understand "cum in [something]" as cumming in.
+
+Check an actor cumming in someone:
+	if the noun incorporates a pussy (called her pussy):
+		try the actor cumming in her pussy instead;
 
 Report an actor cumming in:
 	if the noun is the player:
@@ -426,6 +446,7 @@ Report an actor cumming in:
 
 Cumming on is an action applying to one thing.
 Cumming on is possibly sexual behavior.
+Cumming on is possibly uncovered behavior.
 Understand "cum on [something]" as cumming on.
 
 Report an actor cumming on:
@@ -450,6 +471,7 @@ Report an actor encouraging:
 
 Fingering is an action applying to one thing.
 Fingering is possibly sexual behavior.
+Fingering is possibly uncovered behavior.
 Understand "finger [something]" as fingering.
 Understand the command "fingerbang" and "fingerfuck" as "finger".
 
@@ -467,9 +489,16 @@ Report an actor fingering:
 
 Fucking is an action applying to one thing.
 Fucking is possibly sexual behavior.
+Fucking is possibly uncovered behavior.
 Understand "fuck [something]" as fucking.
 Understand the command "screw" and "bang" as "fuck".
 
+[the owner is wearing something (called the garment) that covers the bodyarea]
+
+Check an actor fucking someone:
+	if the noun incorporates a pussy (called her pussy):
+		try the actor fucking her pussy instead;
+			
 Report an actor fucking:
 	if the noun is the player:
 		say "[The actor] [fuck] [us].";
@@ -480,6 +509,7 @@ Report an actor fucking:
 
 Fucking it with is an action applying to two things.
 Fucking something with is possibly sexual behavior.
+Fucking something with is possibly uncovered behavior.
 Understand "fuck [other things] with [something]" as fucking it with.
 
 Check an actor fucking something with:
@@ -511,6 +541,7 @@ Report an actor hugging:
 
 Licking is an action applying to one thing.
 Licking is possibly sexual behavior.
+Licking is possibly uncovered behavior.
 Understand "lick [something]" as licking.
 
 Report an actor licking:
@@ -535,6 +566,7 @@ Check an actor masturbating:
 
 Reassuring is an action applying to one thing.
 Understand "reassure [someone]" as reassuring.
+Understand the command "calm" and "relax" as "reassure".
 
 Check an actor reassuring:
 	if the alertness of the noun is at least 5:
@@ -544,7 +576,7 @@ Check an actor reassuring:
 
 Report an actor reassuring:
 	if the actor is alert:
-		say "You whisper reassuring things in [the noun]'s ear. It seems to settle them a bit.";
+		say "You apologize and try to calm [the noun]. It seems to help a bit.";
 	else:
 		say "Worried she's starting to wake up, you whisper reassuring things in [the noun]'s ear. It seems to help, and she breathes a bit deeper.";
 
@@ -585,6 +617,7 @@ Report an actor spanking:
 
 Spitting on is an action applying to one thing.
 Spitting on is possibly sexual behavior.
+Spitting on is possibly uncovered behavior.
 Understand "spit on [something]" as spitting on.
 
 Report an actor spitting on:
@@ -597,6 +630,7 @@ Report an actor spitting on:
 
 Sucking is an action applying to one thing.
 Sucking is possibly sexual behavior.
+Sucking is possibly uncovered behavior.
 Understand "suck [something]" and "suck on [something]" as sucking.
 Understand the command "blow" as "suck".
 
@@ -635,7 +669,7 @@ Check an actor touching something with:
 Report an actor touching something with:
 	say "[The actor] [touch] [the noun] with [the second noun]."
 
-Part 9 - Easter Eggs
+Part 10 - Easter Eggs
 
 [Magic Words]
 
@@ -658,7 +692,7 @@ Report transfiguring:
 Instead of smelling a finger incorporated by the player:
 	say "Hmmm… A complex and heady bouquet. Hints of cream, vanilla, spice, and [if flora is touchable]Flora's pussy[else if jo is touchable]Jo's pussy[else]cum[end if].";
 
-Part 10 - Status Check Rules
+Part 11 - Status Check Rules
 
 [Note: These should be Check rules for easy overriding, but they apply to multiple actions, so they use Instead. They can be overridden with Before checks.]
 
@@ -674,6 +708,17 @@ Instead of possibly sexual behavior (this is the don't touch alert people rule):
 	else:
 		continue the action;
 
+[Don't interact with covered body parts]
+[Some actions (like fingering) don't work through clothing. Some (like rubbing) do.]
+
+Instead of possibly uncovered behavior (this is the don't interact with covered body parts rule):
+	if the noun is a body part that is part of someone (called the owner) and the noun belongs to a body-area (called the bodyarea) and the owner is wearing something (called the garment) that covers the bodyarea:
+		say "You can't do that, because [the noun] is covered by [the garment].";
+	else if the second noun is a body part that is part of someone (called the owner) and the second noun belongs to a body-area (called the bodyarea) and the owner is wearing something (called the garment) that covers the bodyarea:
+		say "You can't do that, because [the second noun] is covered by [the garment].";
+	else:
+		continue the action;
+
 [Don't undress alert people]
 
 Instead of taking or taking off a garment that is worn by someone (called the owner) that is not the player (this is the don't undress alert people rule):
@@ -682,7 +727,7 @@ Instead of taking or taking off a garment that is worn by someone (called the ow
 	else:
 		continue the action;
 
-Part 11 - Undressing Rules
+Part 12 - Undressing Rules
 
 [Note: These should be Check rules for easy overriding, but they apply to multiple actions, so they use Instead. They can be overridden with Before checks.]
 
@@ -711,7 +756,7 @@ Check taking off somebody (this is the stripping a person rule):
 	otherwise:
 		say "But [the noun] [are] already naked!" instead;
 
-Part 12 - Debugging - Not for release
+Part 13 - Debugging - Not for release
 
 [Arousing]
 
@@ -768,7 +813,7 @@ When play begins (this is the run property checks at the start of play rule):
 			if description of the item is "":
 				say "[item] has no description."
 
-Part 13 - Testing
+Part 14 - Testing
 
 test alertness with "reassure her / debug her / tell her she's dreaming / debug her / flora, you're dreaming / debug her / flora, go back to sleep / debug her".
 
@@ -812,7 +857,7 @@ The House is a region.
 
 A light switch is a kind of scenery device. A light switch is in every room. The description is usually "Off? On? This light switch does it all."
 
-Instead of switching on or switching off a light switch, say "Better not, you don't want anyone to notice you."
+Instead of switching on or switching off a light switch, say "Better not, you don't want anyone to notice you're awake."
 
 [--------------------------------------]
 
@@ -854,13 +899,13 @@ Chapter 1 - Scenery
 
 The family photos are scenery in the hallway. "There are many photos in the hallway of your family. Since the divorce, Jo removed all the ones of your father. Those remaining show various combinations of you, Flora, and Jo."
 
-A photo is scenery in the hallway. Understand "family photo" as a a photo. "This one shows [one of]Jo and Flora at the beach wearing bikinis. The difference between their bodies is astonishing. Jo's full body is practically spilling out of the tight black fabric, while Flora's breasts look modest in comparison, despite her nipples poking through the orange cups[or]you and Flora at the fair. She challenged you to a corndog eating contest and you watched, astonished as she practically deep-throated sausage after sausage[or]you and Jo in silly hats at a Christmas party. You remember struggling not to stare down the prominent cleavage of Jo's holiday dress[or]you with Jo and Flora at a family picnic. A lovely day together which is only slightly tainted by the memory of Jo catching you masturbating into Flora's dirty panties in the bathroom that night[then at random]."
+A photo is scenery in the hallway. Understand "family photo" as a photo. "This one shows [one of]Jo and Flora at the beach wearing bikinis. The difference between their bodies is astonishing. Jo's full body is practically spilling out of the tight black fabric, while Flora's breasts look modest in comparison, despite her nipples poking through the orange cups[or]you and Flora at the fair. She challenged you to a corndog eating contest and you watched, astonished as she practically deep-throated sausage after sausage[or]you and Jo in silly hats at a Christmas party. You remember struggling not to stare down the prominent cleavage of Jo's holiday dress[or]you with Jo and Flora at a family picnic. A lovely day together which is only slightly tainted by the memory of Jo catching you masturbating into Flora's dirty panties in the bathroom that night[then at random]."
 
 [--------------------------------------]
 
 Part 3 - Flora's Room
 
-Flora's Room is in the house and north of the hallway. "The soft moonlight reveals a textbook example of a teenage girl's room. Posters of cute boys on the wall, stuffed animals and loads of pillows on the bed. Her desk is piled with marine biology textbooks. To the south is the hallway."
+Flora's Room is in the house and north of the hallway. "The soft moonlight reveals the forbidden territory of Flora's room. She hasn't let you in here in years. Posters of cute boys on the wall, stuffed animals and loads of pillows on the bed. Her desk is piled with marine biology textbooks. To the south is the hallway."
 
 Chapter 1 - Scenery
 
@@ -886,7 +931,7 @@ The cute pink vibrator is a device. Understand "vibe" and "toy" as the vibrator.
 
 Flora's diary is a thing. The description is "Holy shit. As you flip through Flora's diary, you discover she has been having increasingly more explicit sex dreams about you. She wavers between feeling guilty about these fantasies and noting that it's not like you're actually related."
 
-A dream is a part of Flora's diary. The description is "In this dream, [one of]Flora went down on you. It started out sweet and gentle, but by the end you had a grip on her hair to force her to take you deeper, until she was gagging as you came down her throat. When she woke up, her panties were soaked[or]you caught Flora sneaking out, bent her over the kitchen table, lifted her skirt, pulled down her panties, and spanked her until she was dripping wet and couldn't walk straight[or]Flora caught you sniffing her panties, but instead of being mad, she let you go to the source. She lay you down and sat on your face, pressing her soaking wet pussy against your face, and let you lick her clit while she sucked your cock[or]you, Jo, and Flora were watching a movie. She noticed you had a hard-on, sat on your lap, slipped your cock inside her shorts, and fucked you quietly, hoping Jo wouldn't notice[or]Flora was riding her octopus, it's tentacles squeezing her tits, when you were suddenly behind her and started fucking her ass. Being filled in both holes made her cum again and again in the dream, and when she woke up, she had to use her vibrator[or]Flora was laying on her back, rubbing her clit, when a spotlight turned on, and she realized that she was being watched by you, Jo, Envy Adams, and her octopus. Everyone was rubbing one out and crawling closer, their faces approaching her spread thighs, until she squirted in all their faces[then at random]."
+A dream is a part of Flora's diary. Understand "fantasy" and "fantasies" and "dreams" as a dream. The description is "In this dream, [one of]Flora went down on you. It started out sweet and gentle, but by the end you had a grip on her hair to force her to take you deeper, until she was gagging as you came down her throat. When she woke up, her panties were soaked[or]you caught Flora sneaking out, bent her over the kitchen table, lifted her skirt, pulled down her panties, and spanked her until she was dripping wet and couldn't walk straight[or]Flora caught you sniffing her panties, but instead of being mad, she let you go to the source. She lay you down and sat on your face, pressing her soaking wet pussy against your face, and let you lick her clit while she sucked your cock[or]you, Jo, and Flora were watching a movie. She noticed you had a hard-on, sat on your lap, slipped your cock inside her shorts, and fucked you quietly, hoping Jo wouldn't notice[or]Flora was riding her octopus, it's tentacles squeezing her tits, when you were suddenly behind her and started fucking her ass. Being filled in both holes made her cum again and again in the dream, and when she woke up, she had to use her vibrator[or]Flora was laying on her back, rubbing her clit, when a spotlight turned on, and she realized that she was being watched by you, Jo, Envy Adams, and her octopus. Everyone was rubbing one out and crawling closer, their faces approaching her spread thighs, until she squirted in all their faces[then at random]."
 
 Chapter 3 - Interactions
 
@@ -1039,38 +1084,89 @@ Instead of touching Jo's clit, say "[if Jo is aroused]Jo groans and you feel a g
 
 Book 3 - Flora
 
-Flora is a woman in your room. "Flora is asleep on her back. She's kicked the blanket off, and looks restless."
+Flora is a woman in your room. "Flora is [flora-description]."
 
-The description of Flora is "Your stepsister has a coy smile. Her wavy brunette hair hangs just past her shoulders, which, like her face, are covered in freckles. She is shorter than you, with a slim figure and small, perky breasts."
+To say flora-description:
+	if flora is alert:
+		if flora is aroused:
+			say "is laying on her back, watching you with interest. Her skin is flushed, and she's breathing heavily";
+		else if flora is interested:
+			say "laying on her back, looking restless";
+		else:
+			say "sitting up, and looks unhappy";
+	else if flora is drowsy:
+		if flora is aroused:
+			say "laying on her back, looking drowsy, but aroused. Her skin is flushed and she's breathing heavily";
+		else:
+			say "laying on her back, looking drowsy but restless";
+	else:
+		if flora is aroused:
+			say "laying on her back. Her eyes are closed, but her skin is flushed, and she's breathing heavily";
+		else:
+			say "asleep on her back. She's kicked the blanket off, and looks restless";
 
-Flora has alertness 0. Flora has arousal 30.
+The description of Flora is "Your stepsister has a coy smile. Her wavy brunette hair hangs just past her shoulders, which, like her face, are covered in freckles. She is shorter than you, with a slim figure and small, perky breasts[if flora is wearing something]. She is wearing [a list of things worn by flora][end if]."
+
+Flora has alertness 0. Flora has arousal 15.
 
 Part 1 - Body Parts
+
+[Face]
+
+The description of Flora's face is "Flora's cheeks are covered in freckles. [if Flora is alert]There is a twinkle in her eye, and[else]Her eyes are closed, but[end if] her lips curl up as if she's amused by something.".
+
+[Mouth]
+
+The description of Flora's mouth is "Flora's lips are moist and pink. You can't help but imagine slipping your cock between them.".
+
+[Breast, Nipple]
 
 The description of Flora's breast is "[flora-breast-description]".
 The description of Flora's nipple is "[flora-breast-description]".
 
 To say flora-breast-description:
-	if flora is wearing something that covers the chest:
-		say "You can't see [the noun]!";
+	if flora is wearing something (called the garment) that covers the chest:
+		say "You can't see [the noun] under [the garment].";
 	else:
-		say "Flora's small breasts are crowned with nipples just a bit darker pink than the rosy color of her areola, which fade gently into the pale color of her soft flesh."
+		say "Flora's small breasts are crowned with dark, puffy areola[if Flora is aroused], currently puckered with arousal. Her nipples stand firm, begging for the heat of your mouth[else] and perky nipples[end if]."
+
+[Clit]
 
 The description of Flora's clit is "[flora-clit-description]".
 
 To say flora-clit-description:
-	if flora is wearing something that covers the junk:
-		say "You can't see [the noun]!";
+	if flora is wearing something (called the garment) that covers the junk:
+		say "You can't see [the noun] under [the garment].";
 	else:
-		say "Flora's clit peeks demurely from its hiding place."
+		say "Flora's clit [if Flora is dripping]protrudes from its hood, demanding your touch[else]peeks demurely from its hiding place[end if]."
+
+[Pussy]
+
+The description of Flora's pussy is "[flora-pussy-description]".
+
+To say flora-pussy-description:
+	if flora is wearing something (called the garment) that covers the junk:
+		say "You can't see [the noun] under [the garment].";
+	else:
+		say "Flora is shaved completely bare, [if Flora is dripping]her pink lips parted to reveal her pussy, dripping with her juices and desperate to be filled[else if Flora is aroused]her lips glistening with a hint of creamy wetness[else]a smooth expanse of skin stretching from her belly button down to her cleft[end if]."
+
+[Ass]
+
+The description of Flora's ass is "Flora's ass is smooth and round and soft. You can't help but imagine slapping it and watching the impression of your handprint bloom on her pale skin."
+
+[Leg]
+
+The description of Flora's leg is "Flora's shaved legs have pleasant curves, leading your eyes up her calves, along her thighs, and over her hips."
 
 Part 2 - Clothing
+		
+Flora is wearing a shirt called the henley shirt. The description of the shirt is "It's a comfortable old henley with purple sleeves and a deep v-neck. The fabric is thin and leaves little to the imagination."
 
-Flora is wearing a bra called the polka-dot bra. The description of the bra is "Flora's bra is pink with white polka-dots."
+Flora is wearing a bra called the polka-dot bra. The description of the bra is "It's pink with white polka-dots."
 
-Flora is wearing underwear called the polka-dot panties. The description of the underwear is "Flora's panties are pink with white polka-dots."
+Flora is wearing underwear called the polka-dot panties. The description of the underwear is "They're pink with white polka-dots[if Flora is aroused], and there's a noticable wet spot[end if]."
 
-Flora is wearing a shirt called the henley shirt. The description of the shirt is "Flora's shirt is a comfortable old henley shirt with purple sleeves and a deep v-neck. The fabric is thin and leaves little to the imagination."
+Part 3 - Interactions
 
 [
 - attack: slap, smack, spank
@@ -1104,41 +1200,75 @@ Flora is wearing a shirt called the henley shirt. The description of the shirt i
 - masturbating: jerk off, rub one out
 - spitting on
 - sucking: blow
-
-- face: cheeks, nose, eyes, chin
-- mouth: lips, tongue, teeth, tonsils, throat
-- breast: boob, tit, chest
-- nipple: nip
-- clit: clitoris
-- pussy: pussy, cunt, lips
-- ass: butt, bottom, booty, butthole, asshole
 ]
 
-Part 3 - Interactions
-
-[Check alertness before touching]
+[Flora kicks you out if she's alert or not aroused]
 Before possibly sexual behavior (this is the check if Flora is alert rule):
-	if the noun is Flora or the noun is part of Flora:
+	if the noun is Flora or the noun is part of Flora or the second noun is part of Flora:
 		if Flora is alert and Flora is not aroused:
-			say "Flora gasps in shock, and clamps her legs tightly together. 'What are you doing?' She angrily chases you out of her room.";
+			say "Flora gasps in shock, and clamps her legs tightly together. 'What are you doing?' She chases you out of her room.[paragraph break](You'll have to calm her down or wait for her to fall asleep before you can try anything with her again.)";
 			now the player is in the Hallway instead;
+
+[TODO: add more random options, especially at lower levels]
+[TODO: once flora's excited, she might mumble your name in her sleep]
+Instead of listening to Flora:
+	if Flora is alert:
+		if Flora is orgasmic:
+			say "'I'm cumming!' she blurts, her body shaking.";
+		else if Flora is dripping:
+			say "'Make me cum!' she begs.";
+		else if Flora is excited:
+			say "'You're driving me crazy!' she pants.";
+		else if Flora is aroused:
+			say "'Yes, like that,' she purrs.";
+		else if Flora is interested:
+			say "'Oh that's nice,' she whispers.";
+		otherwise:
+			say "'What's happening?' she asks.";
+	otherwise:
+		if Flora is orgasmic:
+			say "She cries out, her entire body is shaking, as an orgasm rolls through her body.";
+		else if Flora is dripping:
+			say "Her body is tense, gasping and grunting as you touch her.";
+		else if Flora is excited:
+			say "She's breathing heavily, and moaning.";
+		else if Flora is aroused:
+			say "She squirms languidly, and purrs quietly.";
+		else if Flora is interested:
+			say "She murmurs in her sleep, responding to your touch.";
+		otherwise:
+			say "She shifts in her sleep, and seems unaware of your presence.";
 
 Chapter 1 - Clothing
 
-[after removing panties, express surprise that she's shaved]
+Instead of pulling or pushing a garment worn by Flora:
+	try looking under the noun instead;
+
+[Shirt]
+
+Instead of looking under a shirt worn by Flora:
+	if Flora is wearing a bra:
+		say "You lift Flora's shirt to reveal her bra. [description of the bra]";
+	else:
+		say "You lift Flora's shirt enough to peek inside, and see her dark, puffy nipples."
+
+[Bra]
+
+Instead of looking under a bra worn by Flora:
+	if Flora is wearing a top (called her top):
+		say "You can't lift Flora's bra because [her top] is in the way.";
+	else:
+		say "You lift the cup of Flora's bra enough to peek inside, and see her dark, puffy nipple."
+
+[Panties]
+
+Instead of looking under underwear worn by Flora:
+	say "You lower the waistband of Flora's panties enough to peek inside and see a hint of the cleft between her legs."
+
 After taking or taking off the polka-dot panties for the first time:
 	say "After removing her panties, you are surprised to discover that Flora is fully shaved! Her bare pussy is now exposed."
 
 Chapter 2 - Body Parts
-
-Before opening Flora's leg:
-	say "You spread Flora's legs wide, and revel in the sight of her pussy.";
-	rule succeeds;
-
-Before inserting:
-	if the second noun is Flora's mouth:
-		say "You stuff [the noun] into Flora's mouth.";
-		rule succeeds;
 
 Section 1 - Face
 
@@ -1148,10 +1278,18 @@ Section 2 - Mouth
 
 [mouth: lips, tongue, teeth, tonsils, throat]
 
+Before inserting:
+	if the second noun is Flora's mouth:
+		say "You stuff [the noun] into Flora's mouth.";
+		rule succeeds;
+
 Section 3 - Breasts
 
 Instead of touching or rubbing Flora's breast:
-	increment arousal of Flora;
+	if flora is wearing something that covers the chest:
+		increment the arousal of Flora;
+	else:
+		increase the arousal of Flora by 2;
 	say "Flora giggles and swats your hand away.";
 
 Section 4 - Nipples
@@ -1159,7 +1297,10 @@ Section 4 - Nipples
 Instead of touching or rubbing Flora's nipple:
 	if Flora is excited:
 		say "oh my!";
-	increase the arousal of Flora by 20;
+	if flora is wearing something that covers the chest:
+		increase the arousal of Flora by 2;
+	else:
+		increase the arousal of Flora by 4;
 	say "Flora squirms as her nipple stiffens in your hand.";
 
 Section 5 - Clit
@@ -1186,6 +1327,15 @@ Section 6 - Vagina
 Section 7 - Ass
 
 [ass: butt, bottom, booty, butthole, asshole]
+
+Section 8 - Leg
+
+[leg: thigh, calf, knee]
+
+Before opening Flora's leg:
+	say "You spread Flora's legs wide, and revel in the sight of her pussy.";
+	rule succeeds;
+
 
 [--------------------------------------]
 
